@@ -5,38 +5,78 @@ var QuestionnaireSchema = new mongoose.Schema({
     employee_id: {
         type: String,
     },
-    first_name: {
+    location: {
         type: String,
     },
-    last_name: {
-        type: String,
+    fourteen_days: {
+        type: Boolean,
+        default: false
     },
-    gender: {
-        type: String,
+    leave: {
+        type: Boolean,
+        default: false
     },
-    occupation: {
-        type: String,
+    travel: {
+        type: Boolean,
+        default: false
     },
-    age: {
-        type: String,
+    business: {
+        type: Boolean,
+        default: false
     },
-    mobile: {
-        type: String,
+    contact: {
+        type: Boolean,
+        default: false
     },
-    email: {
-        type: String,
-        lowercase: true,
+    tested: {
+        type: String
     },
-    company_name: {
-        type: String,
+    testType: {
+        type: String
     },
-    company_phone: {
-        type: String,
+    result: {
+        type: String
     },
-    address: {
-        type: String,
+    verifiedby: {
+        type: String
     },
-    id_number: {
+    verificationDate: {
+        type: String
+    },
+    hotBody: {
+        type: String
+    },
+    headache: {
+        type: String
+    },
+    weak: {
+        type: String
+    },
+    bodyPains: {
+        type: String
+    },
+    nausea: {
+        type: String
+    },
+    vomiting: {
+        type: String
+    },
+    soreThroat: {
+        type: String
+    },
+    cough: {
+        type: String
+    },
+    nose: {
+        type: String
+    },
+    chestPains: {
+        type: String
+    },
+    breathing: {
+        type: String
+    },
+    duration: {
         type: String
     },
     date: {

@@ -12,7 +12,7 @@ let BadgeController = {
         return res.send(badge);
     },
     find: async (req,res) => { 
-        let found = await BadgeModel.find();
+        let found = await BadgeModel.find({employee_id: req.params.id});
         res.json(found);
     },
     all: async (req,res) => {
