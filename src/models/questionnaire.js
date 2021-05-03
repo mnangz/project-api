@@ -5,7 +5,7 @@ var QuestionnaireSchema = new mongoose.Schema({
     employee_id: {
         type: String,
     },
-    employee_id: {
+    temperature: {
         type: Number,
     },
     location: {
