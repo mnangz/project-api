@@ -3,10 +3,9 @@ var BadgeModel = require('../models/badge');
 let BadgeController = {
     create: async (req,res) => {
         
-        const { employee_id, location} = req.body;
+        const { employee_id} = req.body;
         const badge = await BadgeModel.create({
             employee_id,
-            location,
         });
 
         return res.send(badge);

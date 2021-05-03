@@ -2,8 +2,8 @@ var User = require('../models/user');
 var jwt = require('jsonwebtoken');
 var config = require('../config/config');
 
-function createToken(user) {
-    return jwt.sign({ id: user.id, username: user.username, isAdmin: user.isAdmin, isNurse: user.isNurse, isEntrance: user.isEntrance, isEmployee: user.isEmployee}, config.jwtSecret, {
+function createToken(user, location) {
+    return jwt.sign({ id: user.id, username: user.username, location: location, isAdmin: user.isAdmin, isNurse: user.isNurse, isEntrance: user.isEntrance, isEmployee: user.isEmployee}, config.jwtSecret, {
         expiresIn: 3600000
     });
 }
@@ -53,7 +53,7 @@ let UserController = {
             user.comparePassword(req.body.password, (err, isMatch) => {
                 if (isMatch && !err) {
                     return res.status(200).json({
-                        token: createToken(user)
+                        token: createToken(user, req.body.location)
                     }); 
                 } else {
                     return res.status(400).json({ msg: 'The username and password don\'t match.' });

@@ -5,6 +5,9 @@ var QuestionnaireSchema = new mongoose.Schema({
     employee_id: {
         type: String,
     },
+    employee_id: {
+        type: Number,
+    },
     location: {
         type: String,
     },
@@ -83,8 +86,9 @@ var QuestionnaireSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    expirationDate: {
-        type: Date,
+    approved: {
+        type: Boolean,
+        default: false
     },
 });
 

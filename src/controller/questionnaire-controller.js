@@ -5,6 +5,7 @@ let QuestionnaireController = {
         
         const {  
             employee_id,
+            temperature,
             location,
             fourteen_days,
             leave,
@@ -30,6 +31,7 @@ let QuestionnaireController = {
             duration} = req.body;
         const questionnaire = await QModel.create({
             employee_id,
+            temperature,
             location,
             fourteen_days,
             leave,
