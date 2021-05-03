@@ -4,6 +4,7 @@ let QuestionnaireController = {
     create: async (req,res) => {
         
         const {  
+            approved,
             employee_id,
             temperature,
             location,
@@ -30,6 +31,7 @@ let QuestionnaireController = {
             breathing,
             duration} = req.body;
         const questionnaire = await QModel.create({
+            approved,
             employee_id,
             temperature,
             location,
