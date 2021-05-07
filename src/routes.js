@@ -35,7 +35,9 @@ routes.delete("/badge/delete/:id", badgeController.delete);
 // Questionnaire Routes
 routes.get("/questionnaires", questionnaireController.all);
 routes.get("/questionnaire/:id", questionnaireController.find);
+routes.get("/questionnaire/valid/:id", questionnaireController.findValid);
 routes.post("/questionnaire/add", questionnaireController.create);
+routes.patch("/questionnaire/approved/:id", questionnaireController.approved);
 routes.delete("/questionnaire/delete/:id", questionnaireController.delete);
 
 // Employee Routes

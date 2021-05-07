@@ -4,7 +4,7 @@ var config = require('../config/config');
 
 function createToken(user, location) {
     return jwt.sign({ id: user.id, username: user.username, location: location, isAdmin: user.isAdmin, isNurse: user.isNurse, isEntrance: user.isEntrance, isEmployee: user.isEmployee}, config.jwtSecret, {
-        expiresIn: 3600000
+        expiresIn: 360000
     });
 }
 

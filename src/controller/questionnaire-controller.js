@@ -65,6 +65,11 @@ let QuestionnaireController = {
         let found = await QModel.find({employee_id : req.params.id});
         res.json(found);
     },
+    findValid: async (req,res) => {
+        const query = { employee_id : req.params.id, approved: false };
+        let qValid = await VisitorModel.find(query);
+        res.json(qValid);
+    },
     all: async (req,res) => {
         let allQuestionnaires = await QModel.find();
         res.json(allQuestionnaires);
@@ -72,6 +77,13 @@ let QuestionnaireController = {
     delete: async (req,res) => {
         let removeQuestionnaire = await QModel.remove({_id: req.params.id});
         res.json(removeQuestionnaire);
+    },
+    approved: async (req,res) => {
+        let qApproved = await QModel.updateOne(
+            { employee_id: req.params.id },
+            { $set: { approved: true }}
+        );
+        res.json(qApproved);
     },
 }
 module.exports = QuestionnaireController
