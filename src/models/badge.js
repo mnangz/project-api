@@ -20,8 +20,4 @@ var BadgeSchema = new mongoose.Schema({
     },
 });
 
-// BadgeSchema.plugin(ttl, { ttl: 5000 });
-
-console.log(BadgeSchema.indexes());
-
 module.exports = mongoose.model('Badge', BadgeSchema);
