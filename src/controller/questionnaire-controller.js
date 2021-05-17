@@ -2,16 +2,6 @@ var QModel = require('../models/questionnaire');
 
 let QuestionnaireController = {
     create: async (req,res) => {
-
-        QModel.findOne({ employee_id: req.body.employee_id, approved: false }, async (err, questionnaire) => {
-            if (err) {
-                return res.status(400).json({ 'msg': err });
-            }
-     
-            if (questionnaire) {
-                return res.status(400).json({ 'msg': 'A valid questionnaire has already been submitted please refer to a health professional' });
-            }
-        });
         
         const {  
             approved,

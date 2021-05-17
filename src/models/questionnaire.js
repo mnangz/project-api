@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 var QuestionnaireSchema = new mongoose.Schema({
     employee_id: {
         type: String,
-        lowercase: true,
     },
     temperature: {
         type: Number,
